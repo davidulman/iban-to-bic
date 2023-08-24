@@ -1,5 +1,5 @@
 const ibantools = require('ibantools');
-const { ibanToBic } = require('..');
+const { ibanToBic, ibanToBankName } = require('..');
 
 test('determines the correct BIC for an Austrian IBAN', () => {
   expect(ibanToBic('AT781400039828399259')).toBe('BAWAATWWXXX');
@@ -10,7 +10,7 @@ test('determines the correct BIC for a Belgian IBAN', () => {
 });
 
 test('determines the correct BIC for a German IBAN', () => {
-  expect(ibanToBic('DE51500105179975341634')).toBe('INGDDEFFXXX');
+  expect(ibanToBankName('DE51500105179975341634')).toBe('INGDDEFFXXX');
 });
 
 test('determines the correct BIC for a Luxembourgish IBAN', () => {
