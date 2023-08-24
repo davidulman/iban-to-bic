@@ -57,18 +57,18 @@ export function ibanToBic(ibanArg: string): GetBicCode | undefined {
  *
  ```javascript
  {
-  code: '68492200',
-  bic: 'GENODE61WT1',
-  branches: [
-    { name: 'Volksbank Hochrhein', shortName: 'Volksbank Hochrhein' }, // INDEX 0
+  "code": "68492200",
+  "bic": "GENODE61WT1",
+  "branches": [
+    { "name": "Volksbank Hochrhein", "shortName": "Volksbank Hochrhein" }, // INDEX 0
     { 
-      name: 'Volksbank Hochrhein (Gf P2)',
-      shortName: 'VB Hochrhein Waldshut-Tieng'
+      "name": "Volksbank Hochrhein (Gf P2)",
+      "shortName": "VB Hochrhein Waldshut-Tieng"
     } // INDEX 1
   ],
   // name and shortName are from index 0 of branches array
-  name: 'Volksbank Hochrhein',
-  shortName: 'Volksbank Hochrhein'
+  "name": 'Volksbank Hochrhein',
+  "shortName": 'Volksbank Hochrhein'
 }
 ```
  * NOTE: With Belgium Bank Names, The Banks has multiple names for different languages, So you should be aware that it return an Object with the names for each language.
@@ -126,18 +126,18 @@ export function ibanToBankName(ibanArg: string): FullCountriesResult | undefined
  * 
 ```javascript
  {
-  code: '68492200',
-  bic: 'GENODE61WT1',
-  branches: [
-    { name: 'Volksbank Hochrhein', shortName: 'Volksbank Hochrhein' }, // INDEX 0
+  "code": "68492200",
+  "bic": "GENODE61WT1",
+  "branches": [
+    { "name": "Volksbank Hochrhein", "shortName": "Volksbank Hochrhein" }, // INDEX 0
     { 
-      name: 'Volksbank Hochrhein (Gf P2)',
-      shortName: 'VB Hochrhein Waldshut-Tieng'
+      "name": "Volksbank Hochrhein (Gf P2)",
+      "shortName": "VB Hochrhein Waldshut-Tieng"
     } // INDEX 1
   ],
   // name and shortName are from index 0 of branches array
-  name: 'Volksbank Hochrhein',
-  shortName: 'Volksbank Hochrhein'
+  "name": 'Volksbank Hochrhein',
+  "shortName": 'Volksbank Hochrhein'
 }
 ```
 
