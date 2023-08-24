@@ -1,8 +1,9 @@
 {
   "name": "banking-tools",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "Forked Version Of The sigalor/iban-to-bic Package",
-  "browser": "index.js",
+  "browser": "./dist/bundle.js",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "test": "npx jest",
     "build": "webpack",
@@ -25,20 +26,21 @@
   },
   "homepage": "https://github.com/davidulman/iban-to-bic#readme",
   "dependencies": {
-    "ibantools": "^4.2.2",
+    "ibantools": "^4.3.3",
     "ts-loader": "^9.4.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.197",
     "@types/node": "^20.5.4",
-    "fs-extra": "^11.1.0",
+    "fs-extra": "^11.1.1",
     "iconv-lite": "^0.6.3",
-    "jest": "^29.3.1",
-    "jsdom": "^21.0.0",
-    "neat-csv": "^6.0.1",
-    "node-fetch-commonjs": "^3.2.4",
+    "jest": "^29.6.4",
+    "jsdom": "^22.1.0",
+    "neat-csv": "^7.0.0",
+    "node-fetch-commonjs": "^3.3.1",
     "typescript": "^5.1.6",
     "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
+    "webpack-cli": "^5.1.4",
     "xlsx": "^0.18.5"
   },
   "main": "webpack.config.js",

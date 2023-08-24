@@ -1,23 +1,26 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
-  entry: './index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'banktools.js',
-    library: 'bank_tools',
-  },
-  resolve: {
-    extensions: ['.ts', '.js'],
-  },
+  entry: './src/index.ts',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'umd',
+    library: 'bank_tools',
+    umdNamedDefine: true,
+    auxiliaryComment: 'Bank Tools Declaration File',
   },
 };

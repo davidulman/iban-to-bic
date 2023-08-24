@@ -1,7 +1,8 @@
+import * as _ from 'lodash';
 import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
-import { GetBicCode, datasets } from './datasets';
-import { FullCountriesResult, datasetsExtended } from './datasets-extended';
-import { DEBankInfo, GermanBanks } from './types/dataset-extended/types';
+import { GetBicCode, datasets } from '../datasets';
+import { FullCountriesResult, datasetsExtended } from '../datasets-extended';
+import { DEBankInfo, GermanBanks } from '../types/dataset-extended/types';
 
 /**
  * Validates an IBAN and returns the formatted version.
