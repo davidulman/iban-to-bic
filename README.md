@@ -1,43 +1,34 @@
-# iban-to-bic
+# banking-tools
 
-[![GitHub license](https://img.shields.io/github/license/sigalor/iban-to-bic)](https://github.com/sigalor/iban-to-bic/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/iban-to-bic)](https://www.npmjs.com/package/iban-to-bic) [![Unit tests workflow status](https://github.com/sigalor/iban-to-bic/actions/workflows/tests.yaml/badge.svg)](https://github.com/sigalor/iban-to-bic/actions/workflows/tests.yaml)
+[![GitHub license](https://img.shields.io/github/license/YourUsername/banking-tools)](https://github.com/YourUsername/banking-tools/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/banking-tools)](https://www.npmjs.com/package/banking-tools) [![Unit tests workflow status](https://github.com/YourUsername/banking-tools/actions/workflows/tests.yaml/badge.svg)](https://github.com/YourUsername/banking-tools/actions/workflows/tests.yaml)
 
-Determines the SWIFT BIC of an IBAN. Currently supports IBANs from the following countries: Austria, Belgium, Germany, Luxembourg, Netherlands, Spain, France.
+A lightweight library to determine the SWIFT BIC of an IBAN. Supports IBANs from Austria, Belgium, Germany, Luxembourg, Netherlands, Spain, and France.
 
 ## Usage
 
 ```javascript
-const { ibanToBic } = require('iban-to-bic');
+const { ibanToBic } = require('banking-tools');
 
 const bic = ibanToBic('DE51500105179975341634');
 // bic is now "INGDDEFFXXX"
 ```
 
-`ibanToBic` returns undefined if the IBAN is invalid (checked internally using [ibantools](https://github.com/Simplify/ibantools)) or if no corresponding BIC was found.
+The ibanToBic function returns undefined if the IBAN is invalid (validated internally using ibantools) or if no corresponding BIC was found.
 
-## Usage in the browser
+## Retrieve Bank Name from IBAN
 
-iban-to-bic is really simple to use inside a browser. You can either pull the package from npm and build it with your favorite packaging tool or you can use it from a CDN like this:
+```javascript
+Copy code
+import { ibanToBankName } from 'banking-tools';
 
-```
-<script type="text/javascript" src="https://unpkg.com/iban-to-bic@latest/dist/iban-to-bic.js">
-```
-
-Or
-
-```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iban-to-bic@latest/dist/iban-to-bic.js">
-```
-
-And then invoke it like this:
+const bankInfo = ibanToBankName('DE51500105179975341634');
+// bankInfo is an object containing bank details, undefined if not found
 
 ```
-<script type="text/javascript">
-	window.ibanToBic.ibanToBic('********');
-</script>
-```
 
-Using this code makes it super comfortable to validate user input and provide auto-fill to your application.
+## TypeScript Support
+
+Both ibanToBic and ibanToBankName functions come with TypeScript support and provide clear typings for the return values.
 
 ## Updating the dataset
 

@@ -2,6 +2,13 @@ import { electronicFormatIBAN, isValidIBAN } from 'ibantools';
 import { GetBicCode, datasets } from './datasets';
 import { FullCountriesResult, datasetsExtended } from './datasets-extended';
 
+/**
+ * Validates an IBAN and returns the formatted version.
+ *
+ * @param iban - The IBAN to validate.
+ * @returns The formatted IBAN.
+ * @throws Error if the input IBAN is invalid.
+ */
 export function ibanIsValid(iban: string): string {
   const formattedIBAN = electronicFormatIBAN(iban);
   const isValid = isValidIBAN(formattedIBAN as string);
@@ -9,6 +16,12 @@ export function ibanIsValid(iban: string): string {
   return formattedIBAN as string;
 }
 
+/**
+ * Retrieves the BIC code for a given IBAN.
+ *
+ * @param ibanArg - The IBAN for which to retrieve the BIC code.
+ * @returns The BIC code associated with the IBAN.
+ */
 export function ibanToBic(ibanArg: string): GetBicCode | undefined {
   const formattedIBAN = ibanIsValid(ibanArg);
 
@@ -28,6 +41,12 @@ export function ibanToBic(ibanArg: string): GetBicCode | undefined {
   return { [bankCode]: datasets[country][bankCode] };
 }
 
+/**
+ * Retrieves bank information for a given IBAN.
+ *
+ * @param ibanArg - The IBAN for which to retrieve bank information.
+ * @returns Bank information associated with the IBAN.
+ */
 export function ibanToBankName(ibanArg: string): FullCountriesResult | undefined {
   const formattedIBAN = ibanIsValid(ibanArg);
 

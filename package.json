@@ -1,6 +1,6 @@
 {
-  "name": "bank-tools",
-  "version": "1.3.0",
+  "name": "banking-tools",
+  "version": "1.0.0",
   "description": "Forked Version Of The sigalor/iban-to-bic Package",
   "browser": "index.js",
   "scripts": {
