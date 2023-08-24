@@ -2,9 +2,21 @@
 
 [![GitHub license](https://img.shields.io/github/license/YourUsername/banking-tools)](https://github.com/YourUsername/banking-tools/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/banking-tools)](https://www.npmjs.com/package/banking-tools) [![Unit tests workflow status](https://github.com/YourUsername/banking-tools/actions/workflows/tests.yaml/badge.svg)](https://github.com/YourUsername/banking-tools/actions/workflows/tests.yaml)
 
-A lightweight library to determine the SWIFT BIC of an IBAN. Supports IBANs from Austria, Belgium, Germany, Luxembourg, Netherlands, Spain, and France.
+A lightweight library to determine the bank information ( BIC/SWIFT, Bank Name) of an IBAN or BIC. Supports IBANs/BICs from Austria, Belgium, Germany, Luxembourg, Netherlands, Spain, and France.
 
-## Usage
+Forked Library from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) with Added Features: [Retrieve Bank Name from IBAN](#retrieve-bank-name-from-iban) and [Retrieve Bank Name from BIC](#retrieve-bank-name-from-bic)
+
+# Usage
+
+## Installation
+
+Using NPM or Yarn:
+
+```
+npm i banking-tools
+yarn add banking-tools
+
+```
 
 ## Retrieve BIC from IBAN
 
@@ -36,61 +48,61 @@ import { ibanToBankName } from 'banking-tools';
 const bankInfo = ibanToBankName('DE51500105179975341634');
 // Returns :
 
- // NOTE: With German Bank Names, Many Banks has multiple branches names, so now by default if there is not a name or short name for the bank, it will return the FIRST branch name and short name.
+// NOTE: With German Bank Names, Many Banks has multiple branches names, so now by default if there is not a name or short name for the bank, it will return the FIRST branch name and short name.
 
- {
-  "code": '68492200',
-  "bic": 'GENODE61WT1',
-  "branches": [
-    { "name": 'Volksbank Hochrhein', "shortName": 'Volksbank Hochrhein' }, // INDEX 0
-    {
-      "name": 'Volksbank Hochrhein (Gf P2)',
-      "shortName": 'VB Hochrhein Waldshut-Tieng'
-    } // INDEX 1
-  ],
-  // name and shortName are from index 0 of branches array
-  "name": 'Volksbank Hochrhein',
-  "shortName": 'Volksbank Hochrhein'
-}
- // NOTE: With Belgium Bank Names, The Banks has multiple names for different languages, So you should be aware that it return an Object with the names for each language.
-  {
-      "code": "096",
-      "bic": "GKCCBEBB",
-      "name": {
-          "nl": "BELFIUS BANK",
-          "fr": "BELFIUS BANQUE"
-      }
-}
+//  {
+//   "code": '68492200',
+//   "bic": 'GENODE61WT1',
+//   "branches": [
+//     { "name": 'Volksbank Hochrhein', "shortName": 'Volksbank Hochrhein' }, // INDEX 0
+//     {
+//       "name": 'Volksbank Hochrhein (Gf P2)',
+//       "shortName": 'VB Hochrhein Waldshut-Tieng'
+//     } // INDEX 1
+//   ],
+//   // name and shortName are from index 0 of branches array
+//   "name": 'Volksbank Hochrhein',
+//   "shortName": 'Volksbank Hochrhein'
+// }
+//  NOTE: With Belgium Bank Names, The Banks has multiple names for different languages, So you should be aware that it return an Object with the names for each language.
+//   {
+//       "code": "096",
+//       "bic": "GKCCBEBB",
+//       "name": {
+//           "nl": "BELFIUS BANK",
+//           "fr": "BELFIUS BANQUE"
+//       }
+// }
 ```
 
 ## Retrieve Bank Name from BIC
 
 ```javascript
-    import { bicToBankName } from 'banking-tools';
+import { bicToBankName } from 'banking-tools';
 
-    const bankInfo = bicToBankName('GENODE61WT1');
-    // Returns :
-    {
-        "code": "68492200",
-        "bic": "GENODE61WT1",
-        "branches": [
-            {
-                "name": "Volksbank Hochrhein",
-                "shortName": "Volksbank Hochrhein"
-            },
-            {
-                "name": "Volksbank Hochrhein (Gf P2)",
-                "shortName": "VB Hochrhein Waldshut-Tieng"
-            }
-        ],
-        "name": "Volksbank Hochrhein",
-        "shortName": "Volksbank Hochrhein"
-    }
+const bankInfo = bicToBankName('GENODE61WT1');
+// Returns :
+// {
+//     "code": "68492200",
+//     "bic": "GENODE61WT1",
+//     "branches": [
+//         {
+//             "name": "Volksbank Hochrhein",
+//             "shortName": "Volksbank Hochrhein"
+//         },
+//         {
+//             "name": "Volksbank Hochrhein (Gf P2)",
+//             "shortName": "VB Hochrhein Waldshut-Tieng"
+//         }
+//     ],
+//     "name": "Volksbank Hochrhein",
+//     "shortName": "Volksbank Hochrhein"
+// }
 ```
 
 ## TypeScript Support
 
-Both ibanToBic and ibanToBankName functions come with TypeScript support and provide clear typings for the return values.
+This library is written in TypeScript and comes with its own type definitions.
 
 ## Updating the dataset
 

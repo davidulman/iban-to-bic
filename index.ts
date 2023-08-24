@@ -56,32 +56,32 @@ export function ibanToBic(ibanArg: string): GetBicCode | undefined {
  * NOTE: With German Bank Names, Many Banks has multiple branches names, so now by default if there is not a name or short name for the bank, it will return the FIRST branch name and short name.
  *
  ```javascript
- {
-  "code": "68492200",
-  "bic": "GENODE61WT1",
-  "branches": [
-    { "name": "Volksbank Hochrhein", "shortName": "Volksbank Hochrhein" }, // INDEX 0
-    { 
-      "name": "Volksbank Hochrhein (Gf P2)",
-      "shortName": "VB Hochrhein Waldshut-Tieng"
-    } // INDEX 1
-  ],
-  // name and shortName are from index 0 of branches array
-  "name": 'Volksbank Hochrhein',
-  "shortName": 'Volksbank Hochrhein'
-}
+//  {
+//   "code": "68492200",
+//   "bic": "GENODE61WT1",
+//   "branches": [
+//     { "name": "Volksbank Hochrhein", "shortName": "Volksbank Hochrhein" }, // INDEX 0
+//     { 
+//       "name": "Volksbank Hochrhein (Gf P2)",
+//       "shortName": "VB Hochrhein Waldshut-Tieng"
+//     } // INDEX 1
+//   ],
+//   // name and shortName are from index 0 of branches array
+//   "name": 'Volksbank Hochrhein',
+//   "shortName": 'Volksbank Hochrhein'
+// }
 ```
  * NOTE: With Belgium Bank Names, The Banks has multiple names for different languages, So you should be aware that it return an Object with the names for each language.
  * 
- * ```javascript
- * {
-      "code": "096",
-      "bic": "GKCCBEBB",
-      "name": {
-          "nl": "BELFIUS BANK",
-          "fr": "BELFIUS BANQUE"
-      }
-}
+  ```javascript
+//   {
+//       "code": "096",
+//       "bic": "GKCCBEBB",
+//       "name": {
+//           "nl": "BELFIUS BANK",
+//           "fr": "BELFIUS BANQUE"
+//       }
+// }
   ```
  */
 export function ibanToBankName(ibanArg: string): FullCountriesResult | undefined {
@@ -125,32 +125,32 @@ export function ibanToBankName(ibanArg: string): FullCountriesResult | undefined
  * NOTE: I've Seen that some Banks doesn't has BIC field, so if it return undefined, you can use the ibanToBankName function since it search for the bank code.
  * 
 ```javascript
- {
-  "code": "68492200",
-  "bic": "GENODE61WT1",
-  "branches": [
-    { "name": "Volksbank Hochrhein", "shortName": "Volksbank Hochrhein" }, // INDEX 0
-    { 
-      "name": "Volksbank Hochrhein (Gf P2)",
-      "shortName": "VB Hochrhein Waldshut-Tieng"
-    } // INDEX 1
-  ],
-  // name and shortName are from index 0 of branches array
-  "name": 'Volksbank Hochrhein',
-  "shortName": 'Volksbank Hochrhein'
-}
+//  {
+//   "code": "68492200",
+//   "bic": "GENODE61WT1",
+//   "branches": [
+//     { "name": "Volksbank Hochrhein", "shortName": "Volksbank Hochrhein" }, // INDEX 0
+//     { 
+//       "name": "Volksbank Hochrhein (Gf P2)",
+//       "shortName": "VB Hochrhein Waldshut-Tieng"
+//     } // INDEX 1
+//   ],
+//   // name and shortName are from index 0 of branches array
+//   "name": 'Volksbank Hochrhein',
+//   "shortName": 'Volksbank Hochrhein'
+// }
 ```
 
  * 
  * ```javascript
- * {
-      "code": "096",
-      "bic": "GKCCBEBB",
-      "name": {
-          "nl": "BELFIUS BANK",
-          "fr": "BELFIUS BANQUE"
-      }
-}
+//   {
+//       "code": "096",
+//       "bic": "GKCCBEBB",
+//       "name": {
+//           "nl": "BELFIUS BANK",
+//           "fr": "BELFIUS BANQUE"
+//       }
+// }
   ```
  */
 
