@@ -93,4 +93,27 @@ export interface NLBankInfo {
 export interface NetherlandsBanks {
     [bankCode: string]: NLBankInfo;
 }
+export interface CHAddress {
+    street?: string;
+    postalCode?: string;
+    city?: string;
+    country?: string;
+}
+export interface CHBankInfo {
+    code: string;
+    bic: string;
+    name: string;
+    address: CHAddress | CHAddress[];
+}
+export interface SwitzerlandBanks {
+    [bankCode: string]: CHBankInfo;
+}
+export interface CZBankInfo {
+    code: string;
+    bic: string;
+    name: string;
+}
+export interface CzechBanks {
+    [bankCode: string]: CZBankInfo;
+}
 export {};

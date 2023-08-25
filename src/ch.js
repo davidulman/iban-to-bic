@@ -4,7 +4,7 @@ const { getCellValue, writeOutputs, downloadXLSX, assertTableHead } = require('.
 function rowToObject(worksheet, row) {
   const col = n => getCellValue(worksheet, n, row);
   return {
-    code: col(4),
+    code: col(5),
     bic: col(22),
     name: col(12),
     shortName: col(11),

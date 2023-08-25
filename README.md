@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/YourUsername/banking-tools)](https://github.com/YourUsername/banking-tools/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/banking-tools)](https://www.npmjs.com/package/banking-tools) [![Unit tests workflow status](https://github.com/YourUsername/banking-tools/actions/workflows/tests.yaml/badge.svg)](https://github.com/YourUsername/banking-tools/actions/workflows/tests.yaml)
 
-A lightweight library to determine the bank information ( BIC/SWIFT, Bank Name) of an IBAN or BIC. Supports IBANs/BICs from Austria, Belgium, Germany, Luxembourg, Netherlands, Spain, and France.
+A lightweight library to determine the bank information ( BIC/SWIFT, Bank Name) of an IBAN or BIC. Supports IBANs/BICs from Austria, Belgium, Germany, Luxembourg, Netherlands, Spain, France, Switzerland and Czech Republic.
 
 Forked Library from [sigalor/iban-to-bic](https://github.com/sigalor/iban-to-bic) with Added Features: [Retrieve Bank Name from IBAN](#retrieve-bank-name-from-iban) and [Retrieve Bank Name from BIC](#retrieve-bank-name-from-bic)
 

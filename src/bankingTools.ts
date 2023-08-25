@@ -42,6 +42,8 @@ export function ibanToBic(ibanArg: string): GetBicCode | undefined {
   else if (country === 'FR') bankCode = formattedIBAN.substr(4, 5);
   else if (country === 'LU') bankCode = formattedIBAN.substr(4, 3);
   else if (country === 'NL') bankCode = formattedIBAN.substr(4, 4);
+  else if (country === 'CH') bankCode = formattedIBAN.substr(5, 4);
+  else if (country === 'CZ') bankCode = formattedIBAN.substr(4, 4);
   if (!bankCode) return;
 
   return { [bankCode]: datasets[country][bankCode] };
@@ -111,6 +113,9 @@ export function ibanToBankName(ibanArg: string): FullCountriesResult | undefined
   else if (country === 'FR') bankCode = formattedIBAN.substr(4, 5);
   else if (country === 'LU') bankCode = formattedIBAN.substr(4, 3);
   else if (country === 'NL') bankCode = formattedIBAN.substr(4, 4);
+  else if (country === 'CH') bankCode = formattedIBAN.substr(5, 4);
+  else if (country === 'CZ') bankCode = formattedIBAN.substr(4, 4);
+
   if (!bankCode) return;
 
   return datasetsExtended[country][bankCode] as FullCountriesResult;

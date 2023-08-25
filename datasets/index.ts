@@ -5,6 +5,8 @@ import es from './es.json';
 import fr from './fr.json';
 import lu from './lu.json';
 import nl from './nl.json';
+import ch from './ch.json';
+import cz from './cz.json';
 
 export interface GetBicCode {
   [bankCode: string]: string;
@@ -18,4 +20,6 @@ export const datasets: Record<string, GetBicCode> = {
   FR: fr,
   LU: lu,
   NL: nl,
+  CH: ch,
+  CZ: cz,
 };
